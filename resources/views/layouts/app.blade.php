@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/iziToast.min.css') }}">
     <link href="{{ asset('assets/css/sweetalert.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
-
 @yield('page_css')
 <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
@@ -21,11 +20,6 @@
     @yield('page_css')
 
     @yield('css')
-
-    <style>
-
-    </style>
-
 </head>
 <body>
 
@@ -63,12 +57,9 @@
 
 <!-- Template JS File -->
 <script src="{{ asset('web/js/stisla.js') }}"></script>
-<script src="{{ asset('web/js/proyecto.js') }}"></script>
-<script src="{{ asset('web/js/proyecto2.js') }}"></script>
 <script src="{{ asset('web/js/scripts.js') }}"></script>
 <script src="{{ mix('assets/js/profile.js') }}"></script>
 <script src="{{ mix('assets/js/custom/custom.js') }}"></script>
-<script src="https://kit.fontawesome.com/c5a1a24463.js" crossorigin="anonymous"></script>
 @yield('page_js')
 @yield('scripts')
 <script>

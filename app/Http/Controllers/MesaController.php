@@ -11,6 +11,13 @@ use Illuminate\Http\Request;
  */
 class MesaController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:ver-mesa|crear-mesa|editar-mesa|borrar-mesa', ['only' => ['index']]);
+         $this->middleware('permission:crear-mesa', ['only' => ['create','store']]);
+         $this->middleware('permission:editar-mesa', ['only' => ['edit','update']]);
+         $this->middleware('permission:borrar-mesa', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *

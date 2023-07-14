@@ -35,7 +35,8 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-
+                                        
+										<th>Idmesa</th>
 										<th>Nombre</th>
 										<th>Estado</th>
 
@@ -46,29 +47,15 @@
                                     @foreach ($mesas as $mesa)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-
-											<td><i class="fa-solid fa-utensils"></i> {{ $mesa->nombre }}</td>
-                                            @if ($mesa->estado == 'Abierta')
-                                            <td style="color: rgb(0, 189, 16); font-weight: bold;">{{ $mesa->estado }}</td>
-
-
-                                            @endif
-                                            @if ($mesa->estado == 'Cerrada')
-                                            <td style="color: rgb(224, 9, 9); font-weight: bold;">{{ $mesa->estado }}</td>
-
-                                           
-                                            @endif
-                                            @if ($mesa->estado == 'Ocupada')
-                                            <td style="color: rgb(255, 154, 3); font-weight: bold;">{{ $mesa->estado }}</td>
-
-
-                                            @endif
-
+                                            
+											<td>{{ $mesa->idMesa }}</td>
+											<td>{{ $mesa->nombre }}</td>
+											<td>{{ $mesa->estado }}</td>
 
                                             <td>
-                                                <form action="{{ route('mesas.destroy',$mesa->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('mesas.show',$mesa->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('mesas.edit',$mesa->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('mesas.destroy',$mesa->idMesa) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('mesas.show',$mesa->idMesa) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('mesas.edit',$mesa->idMesa) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>

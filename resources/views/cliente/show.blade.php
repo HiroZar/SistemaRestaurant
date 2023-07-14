@@ -21,20 +21,24 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Idtipo:</strong>
-                            {{ $cliente->idTipo }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Documento:</strong>
-                            {{ $cliente->documento }}
+                            <strong>Dni:</strong>
+                            {{ $cliente->dni }}
                         </div>
                         <div class="form-group">
                             <strong>Nombre:</strong>
-                            {{ $cliente->Nombre }}
+                            {{ $cliente->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Apellido:</strong>
-                            {{ $cliente->Apellido }}
+                            {{ $cliente->apellido }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Ruc:</strong>
+                            {{ $cliente->ruc }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Razon Social:</strong>
+                            {{ $cliente->razon_social }}
                         </div>
 
                     </div>

@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Mesa
  *
- * @property $id
+ * @property $idMesa
  * @property $nombre
  * @property $estado
- * @property $created_at
- * @property $updated_at
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -20,6 +18,7 @@ class Mesa extends Model
 {
     
     static $rules = [
+		'idMesa' => 'required',
 		'nombre' => 'required',
 		'estado' => 'required',
     ];
@@ -31,8 +30,8 @@ class Mesa extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre','estado'];
-
+    protected $fillable = ['idMesa','nombre','estado'];
+    protected $primaryKey='idMesa';
 
 
 }

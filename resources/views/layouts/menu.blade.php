@@ -1,9 +1,8 @@
 <li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
-    <a class="nav-link" href="/home">
+    <a class="nav-link" href="/">
         <i class=" fas fa-building"></i><span>Dashboard</span>
     </a>
 </li>
-{{--
 <li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
     <a class="nav-link" href="/user">
         <i class=" fas fa-building"></i><span>Usuarios</span>
@@ -18,41 +17,57 @@
     <a class="nav-link" href="/proveedors">
         <i class=" fas fa-building"></i><span>Proveedor</span>
     </a>
-</li> --}}
-
-
-<li class="dropdown"><a href="#" data-toggle="dropdown"
-    class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-<div class="d-sm-none d-lg-inline-block">GESTION DE PERSONAL</div>
-</a>
-<div class="dropdown-menu dropdown-menu">
-<a href="/user" class="dropdown-item has-icon">
-<i class="fas fa-sign-in-alt"></i>Usuarios
-</a>
-<div class="dropdown-divider"></div>
-<a href="{{ route('register') }}" class="dropdown-item has-icon">
-<i class="fas fa-user-plus"></i>
-</a>
-</div>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/mesas">
+        <i class=" fas fa-building"></i><span>Mesas</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/clientes">
+        <i class=" fas fa-building"></i><span>Clientes</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/platos">
+        <i class=" fas fa-building"></i><span>Platos</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/categorias">
+        <i class=" fas fa-building"></i><span>Categoria Plato</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/comandas">
+        <i class=" fas fa-building"></i><span>Comanda</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/productos">
+        <i class=" fas fa-building"></i><span>Producto</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/tipos">
+        <i class=" fas fa-building"></i><span>Tipo Producto</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/menus">
+        <i class=" fas fa-building"></i><span>Menu</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/tipomenus">
+        <i class=" fas fa-building"></i><span>Tipo Menu</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+    <a class="nav-link" href="/detalleproductos">
+        <i class=" fas fa-building"></i><span>Bebidas</span>
+    </a>
 </li>
 
-<li class="dropdown"><a href="#" data-toggle="dropdown"
-    class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-<div class="d-sm-none d-lg-inline-block">RESERVACIONES</div>
-</a>
-<div class="dropdown-menu dropdown-menu">
-<a href="/reservacions" class="dropdown-item has-icon">
-    <i class="fa-solid fa-clipboard"></i>Reservación
-</a>
-<div class="dropdown-divider"></div>
-<a href="/mesas" class="dropdown-item has-icon">
-    <i class="fa-solid fa-utensils"></i>Mesa
-</a>
 
-<div class="dropdown-divider"></div>
-<a href="/clientes" class="dropdown-item has-icon">
-<i class="fas fa-user-plus"></i>Clientes
-</a>
-</div>
-</li>
 

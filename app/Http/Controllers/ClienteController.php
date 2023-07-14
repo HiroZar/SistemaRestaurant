@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
-use App\Models\TipoCliente;
 use Illuminate\Http\Request;
 
 /**
@@ -32,9 +31,8 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        $tipo = TipoCliente::pluck('nombre','id');
         $cliente = new Cliente();
-        return view('cliente.create', compact('cliente', 'tipo'));
+        return view('cliente.create', compact('cliente'));
     }
 
     /**
@@ -73,10 +71,10 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {   $tipo = TipoCliente::pluck('nombre','id');
+    {
         $cliente = Cliente::find($id);
 
-        return view('cliente.edit', compact('cliente','tipo'));
+        return view('cliente.edit', compact('cliente'));
     }
 
     /**

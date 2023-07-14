@@ -30,89 +30,42 @@
                     @endif
 
                     <div class="card-body">
-                        <span id="card_title">
-                            Clientes Naturales
-                        </span>
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-										<th>Documento</th>
+                                        
+										<th>Dni</th>
 										<th>Nombre</th>
 										<th>Apellido</th>
-
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                    @foreach ($clientes as $cliente)
-                                    @if ($cliente->tipocliente->nombre == "Natural")
-
-
-                                        <tr>
-                                            <td>{{ $cliente->id }}</td>
-{{--
-											<td>{{ $cliente->tipocliente->nombre }}</td> --}}
-											<td>{{ $cliente->documento }}</td>
-											<td>{{ $cliente->Nombre }}</td>
-											<td>{{ $cliente->Apellido }}</td>
-
-                                            <td>
-                                                <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        @endif
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                        <span id="card_title">
-                            Clientes Juridicos
-                        </span>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-										<th>RUC</th>
-										<th>Representante</th>
+										<th>Ruc</th>
 										<th>Razon Social</th>
 
-                                        <th>Acciones</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($clientes as $cliente)
-                                    @if ($cliente->tipocliente->nombre == "Juridica")
-
-
                                         <tr>
-                                            <td>{{ $cliente->id}}</td>
-
-											{{-- <td>{{ $cliente->tipocliente->nombre }}</td> --}}
-											<td>{{ $cliente->documento }}</td>
-											<td>{{ $cliente->Nombre }}</td>
-											<td>{{ $cliente->Apellido }}</td>
+                                            <td>{{ ++$i }}</td>
+                                            
+											<td>{{ $cliente->dni }}</td>
+											<td>{{ $cliente->nombre }}</td>
+											<td>{{ $cliente->apellido }}</td>
+											<td>{{ $cliente->ruc }}</td>
+											<td>{{ $cliente->razon_social }}</td>
 
                                             <td>
-                                                <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('clientes.destroy',$cliente->dni) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->dni) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->dni) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
                                                 </form>
                                             </td>
                                         </tr>
-                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

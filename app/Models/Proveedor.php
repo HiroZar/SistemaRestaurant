@@ -43,7 +43,7 @@ class Proveedor extends Model
      * @var array
      */
     protected $fillable = ['idProveedor','compañia','representante','ruc','celular','direccion','email','estado'];
-
+    protected $primaryKey='idProveedor';
 
 
 }

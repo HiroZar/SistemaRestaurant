@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Cliente
  *
- * @property $id
- * @property $idTipo
- * @property $documento
- * @property $Nombre
- * @property $Apellido
+ * @property $dni
+ * @property $nombre
+ * @property $apellido
+ * @property $ruc
+ * @property $razon_social
+ * @property $created_at
+ * @property $updated_at
  *
- * @property Tipocliente $tipocliente
+ * @property Comanda[] $comandas
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -21,10 +23,7 @@ class Cliente extends Model
 {
     
     static $rules = [
-		'idTipo' => 'required',
-		'documento' => 'required',
-		'Nombre' => 'required',
-		'Apellido' => 'required',
+		'dni' => 'required',
     ];
 
     protected $perPage = 20;
@@ -34,15 +33,15 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['idTipo','documento','Nombre','Apellido'];
-
+    protected $fillable = ['dni','nombre','apellido','ruc','razon_social'];
+    protected $primaryKey='dni';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function tipocliente()
+    public function comandas()
     {
-        return $this->hasOne('App\Models\Tipocliente', 'id', 'idTipo');
+        return $this->hasMany('App\Models\Comanda', 'dni', 'dni');
     }
     
 

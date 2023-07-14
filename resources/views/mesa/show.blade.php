@@ -21,6 +21,10 @@
                     <div class="card-body">
                         
                         <div class="form-group">
+                            <strong>Idmesa:</strong>
+                            {{ $mesa->idMesa }}
+                        </div>
+                        <div class="form-group">
                             <strong>Nombre:</strong>
                             {{ $mesa->nombre }}
                         </div>
