@@ -56,3 +56,35 @@
 </div>
 </li>
 
+
+<li class="dropdown"><a href="#" data-toggle="dropdown"
+    class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+<div class="d-sm-none d-lg-inline-block">ABASTECIMIENTO</div>
+</a>
+<div class="dropdown-menu dropdown-menu">
+<a href="/orden-compra/index2" class="dropdown-item has-icon">
+    <i class="fa-solid fa-clipboard"></i>ORDEN COMPRA
+</a>
+<div class="dropdown-divider"></div>
+<a href="/orden-compras" class="dropdown-item has-icon">
+<i class="fas fa-user-plus"></i>Crear OC
+</a>
+<div class="dropdown-divider"></div>
+<a href="/administradors" class="dropdown-item has-icon">
+    <i class="fa-solid fa-utensils"></i>APROBAR ORDEN
+</a>
+
+<div class="dropdown-divider"></div>
+<a href="/recepcions" class="dropdown-item has-icon">
+<i class="fas fa-user-plus"></i>ACTUALIZAR STOCK
+</a>
+
+<div class="dropdown-divider"></div>
+<a href="/compras" class="dropdown-item has-icon">
+<i class="fas fa-user-plus"></i>PAGAR ORDEN
+</a>
+
+</div>
+</li>
+
+
