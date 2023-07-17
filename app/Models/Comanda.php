@@ -24,7 +24,7 @@ class Comanda extends Model
 {
     
     static $rules = [
-		'idComanda' => 'required',
+		'idMesa' => 'required',
     ];
 
     protected $perPage = 20;

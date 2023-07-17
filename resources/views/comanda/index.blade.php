@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+{{date_default_timezone_set('America/Lima')}}
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -36,7 +37,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Idcomanda</th>
 										<th>Idmesa</th>
 										<th>Dni</th>
 										<th>Fecha</th>
@@ -47,10 +47,10 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($comandas as $comanda)
+                                    @if($comanda->estado=="SIN PAGAR" and $comanda->fecha==date('Y-m-d'))
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $comanda->idComanda }}</td>
 											<td>{{ $comanda->idMesa }}</td>
 											<td>{{ $comanda->dni }}</td>
 											<td>{{ $comanda->fecha }}</td>
@@ -63,9 +63,13 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('detallecomandas.create',$comanda->idComanda) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Platillos') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('detalleproductos.create',$comanda->idComanda) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Bebidas') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('generar-pdf', $comanda->idComanda) }}">{{ __('Generar Voleta') }}</a>
                                                 </form>
                                             </td>
                                         </tr>
+                                    @endif
                                     @endforeach
                                 </tbody>
                             </table>

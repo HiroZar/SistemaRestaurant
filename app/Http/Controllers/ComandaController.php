@@ -49,7 +49,7 @@ class ComandaController extends Controller
 
         $comanda = Comanda::create($request->all());
 
-        return redirect()->route('detallecomandas.index')
+        return redirect()->route('comandas.index')
             ->with('success', 'Comanda created successfully.');
     }
 

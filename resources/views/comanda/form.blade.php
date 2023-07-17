@@ -1,11 +1,6 @@
+
 <div class="box box-info padding-1">
     <div class="box-body">
-        
-        <div class="form-group">
-            {{ Form::label('idComanda') }}
-            {{ Form::text('idComanda', $comanda->idComanda, ['class' => 'form-control' . ($errors->has('idComanda') ? ' is-invalid' : ''), 'placeholder' => 'Idcomanda']) }}
-            {!! $errors->first('idComanda', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
         <div class="form-group">
             {{ Form::label('idMesa') }}
             {{ Form::text('idMesa', $comanda->idMesa, ['class' => 'form-control' . ($errors->has('idMesa') ? ' is-invalid' : ''), 'placeholder' => 'Idmesa']) }}
@@ -18,7 +13,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('fecha') }}
-            {{ Form::date('fecha', $comanda->fecha, ['class' => 'form-control' . ($errors->has('fecha') ? ' is-invalid' : ''), 'placeholder' => 'Fecha']) }}
+            {{ Form::date('fecha', date('Y-m-d'), ['class' => 'form-control' . ($errors->has('fecha') ? ' is-invalid' : ''),'pattern' => '\d{4}-\d{2}-\d{2}' ,'readonly' => 'readonly']) }}
             {!! $errors->first('fecha', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

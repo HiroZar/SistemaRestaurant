@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detalleproducto;
+use App\Models\Comanda;
 use Illuminate\Http\Request;
 
 /**
@@ -29,10 +30,10 @@ class DetalleproductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($idComanda)
     {
         $detalleproducto = new Detalleproducto();
-        return view('detalleproducto.create', compact('detalleproducto'));
+        return view('detalleproducto.create', compact('detalleproducto','idComanda'));
     }
 
     /**
@@ -47,7 +48,7 @@ class DetalleproductoController extends Controller
 
         $detalleproducto = Detalleproducto::create($request->all());
 
-        return redirect()->route('detalleproductos.index')
+        return redirect()->route('comandas.index')
             ->with('success', 'Detalleproducto created successfully.');
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detallecomanda;
+use App\Models\Comanda;
 use Illuminate\Http\Request;
 
 /**
@@ -18,22 +19,20 @@ class DetallecomandaController extends Controller
      */
     public function index()
     {
-        $comanda = new Comanda();
         $detallecomandas = Detallecomanda::paginate();
-        return view('detallecomanda.index', compact('detallecomandas','comanda'))
+        return view('detallecomanda.index', compact('detallecomandas'))
             ->with('i', (request()->input('page', 1) - 1) * $detallecomandas->perPage());
     }
 
 
     /**
      * Show the form for creating a new resource.
-     *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create($idComanda)
+    {   
         $detallecomanda = new Detallecomanda();
-        return view('detallecomanda.create', compact('detallecomanda'));
+        return view('detallecomanda.create', compact('detallecomanda','idComanda'));
     }
 
     /**
@@ -45,10 +44,9 @@ class DetallecomandaController extends Controller
     public function store(Request $request)
     {
         request()->validate(Detallecomanda::$rules);
-
         $detallecomanda = Detallecomanda::create($request->all());
 
-        return redirect()->route('detallecomandas.index')
+        return redirect()->route('comandas.index')
             ->with('success', 'Detallecomanda created successfully.');
     }
 

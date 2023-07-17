@@ -18,6 +18,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\DetallemenuController;
 use App\Http\Controllers\DetallecomandaController;
 use App\Http\Controllers\DetalleproductoController;
+use App\Http\Controllers\PdfController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,12 +56,13 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('detallemenus', DetallemenuController::class);
     Route::resource('detallecomandas', DetallecomandaController::class);
     Route::resource('detalleproductos', DetalleproductoController::class);
-    Route::delete('comandas/{idcomanda}','App\Http\Controllers\ComandaController@show')->name('comandas.show');
     //detalle comandas
+    Route::get('detallecomandas/create/{idComanda}','App\Http\Controllers\DetallecomandaController@create')->name('detallecomandas.create');
     Route::delete('detallecomandas/{idcomanda}/{idplato}','App\Http\Controllers\DetallecomandaController@destroy')->name('detallecomandas.destroy');
     Route::get('detallecomandas/update/{idcomanda}/{idplato}','App\Http\Controllers\DetallecomandaController@show')->name('detallecomandas.show');
     Route::get('detallecomandas/{idcomanda}/{idplato}','App\Http\Controllers\DetallecomandaController@edit')->name('detallecomandas.edit');
     //detalle productos
+    Route::get('detalleproductos/create/{idComanda}','App\Http\Controllers\DetalleproductoController@create')->name('detalleproductos.create');
     Route::delete('detalleproductos/{idcomanda}/{idprocudto}','App\Http\Controllers\DetalleproductoController@destroy')->name('detalleproductos.destroy');
     Route::get('detalleproductos/update/{idcomanda}/{idprocudto}','App\Http\Controllers\DetalleproductoController@show')->name('detalleproductos.show');
     Route::get('detalleproductos/{idcomanda}/{idprocudto}','App\Http\Controllers\DetalleproductoController@edit')->name('detalleproductos.edit');
@@ -69,4 +71,5 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('detallemenus/update/{idmenu}/{idDetalle}','App\Http\Controllers\DetallemenuController@show')->name('detallemenus.show');
     Route::get('detallemenus/{idmenu}/{idDetalle}','App\Http\Controllers\DetallemenuController@edit')->name('detallemenus.edit');
     
+    Route::get('/generar-pdf/{idComanda}', 'App\Http\Controllers\PdfController@generarPdf')->name('generar-pdf');
 });

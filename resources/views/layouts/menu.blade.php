@@ -40,7 +40,7 @@
 </li>
 <li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
     <a class="nav-link" href="/comandas">
-        <i class=" fas fa-building"></i><span>Comanda</span>
+        <i class=" fas fa-building"></i><span>Cliente-Mesa</span>
     </a>
 </li>
 <li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
