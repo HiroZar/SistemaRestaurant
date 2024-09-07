@@ -10,7 +10,6 @@
   <li><strong>Inventario:</strong> Control de inventario de ingredientes y productos.</li>
   <li><strong>Reportes:</strong> Generación de reportes de ventas, pedidos y desempeño.</li>
   <li><strong>Autenticación y Roles:</strong> Gestión de usuarios con diferentes niveles de acceso (Administrador, Mesero, Cocinero, etc.).</li>
-  <li><strong>Notificaciones en Tiempo Real:</strong> Uso de WebSockets para actualizar los estados de los pedidos.</li>
 </ul>
 
 
